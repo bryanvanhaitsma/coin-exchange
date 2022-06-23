@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 const Td = styled.td`
   border: 1px solid white;
-  padding: 0 2rem;
+  width: 25vh;
+  font-size: 1.4rem;
 `;
 
 export default class Coin extends Component {
@@ -31,7 +32,7 @@ export default class Coin extends Component {
   
   render() {
     return (
-      <tr className='coin-row'>
+      <tr>
         <Td>{this.props.name}</Td>
         <Td>{this.props.ticker}</Td>
         <Td>${this.state.price}</Td>
