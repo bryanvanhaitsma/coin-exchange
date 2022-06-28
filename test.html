@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Ticker</th>
+      <th>Price</th>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+  let tbody = document.querySelector('tbody');
+  fetch('https://api.coinpaprika.com/v1/coins/')
+  .then( response => response.json() )
+  .then( coins => {
+      for (let i=0; i <10; ++i) {
+        tbody.innerHTML += `
+          <tr>
+            <td>${i+1}</td>
+            <td>${coins[i].name}</td>
+            <td>${coins[i].symbol}</td>
+            <td></td>
+          </tr>
+        `;
+      }
+    });
+
+</script>
+</body>
+</html>
