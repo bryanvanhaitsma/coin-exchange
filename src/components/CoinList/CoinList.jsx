@@ -32,6 +32,7 @@ export class CoinList extends Component {
                       balance={balance}
                       price={price} 
                       showBalance={this.props.showBalance}
+                      tickerId={key}
                       />
               )
             }
